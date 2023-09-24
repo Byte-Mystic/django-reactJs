@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Notes
 from .serializers import NoteSerializer
+from .utils import getNoteslist, createNote, listNote, updateNote, deleteNote
 
 
 @api_view(["GET"])
@@ -42,42 +43,21 @@ def getRoutes(request):
     return Response(routes)
 
 
-@api_view(["GET"])
+@api_view(["GET", "POST"])
 def getNotes(request):
-    notes = Notes.objects.all().order_by("-updated")
-    serializer = NoteSerializer(notes, many=True)
-    return Response(serializer.data)
+    if request.method == "GET":
+        return getNoteslist()
+    if request.method == "POST":
+        return createNote(request)
 
 
-@api_view(["GET"])
+@api_view(["GET", "PUT", "DELETE"])
 def getNote(request, pk):
-    note = Notes.objects.get(id=pk)
-    serializer = NoteSerializer(note, many=False)
-    return Response(serializer.data)
+    if request.method == "GET":
+        return listNote(request, pk)
 
+    if request.method == "PUT":
+        return updateNote(request, pk)
 
-@api_view(["PUT"])
-def updateNote(request, pk):
-    data = request.data
-    note = Notes.objects.get(id=pk)
-    serializer = NoteSerializer(instance=note, data=data)
-
-    if serializer.is_valid():
-        serializer.save()
-
-    return Response(serializer.data)
-
-
-@api_view(["DELETE"])
-def deleteNote(request, pk):
-    note = Notes.objects.get(id=pk)
-    note.delete()
-    return Response("Note was deleted")
-
-
-@api_view(["POST"])
-def createNote(request):
-    data = request.data
-    note = Notes.objects.create(body=data["body"])
-    serializer = NoteSerializer(note, many=False)
-    return Response(serializer.data)
+    if request.method == "DELETE":
+        return deleteNote(request, pk)
