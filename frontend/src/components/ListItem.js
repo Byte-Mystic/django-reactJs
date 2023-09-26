@@ -10,7 +10,7 @@ let getTitle = (note) => {
 };
 
 let getTime = (note) => {
-  return new Date(note.updated).toLocaleDateString();
+  return new Date(note.updated.$date).toLocaleDateString();
 };
 
 let getContent = (note) => {
@@ -26,11 +26,11 @@ let getContent = (note) => {
 
 const ListItem = ({ note }) => {
   return (
-    <Link to={`/note/${note.id}`}>
+    <Link to={`/note/${note._id.$oid}`}>
       <div className="notes-list-item">
         <h3>{getTitle(note)}</h3>
         <p>
-          <san>{getTime(note)}</san>
+          <span>{getTime(note)}</span>
           {getContent(note)}
         </p>
       </div>

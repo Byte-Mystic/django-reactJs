@@ -15,7 +15,7 @@ const NotePage = () => {
     if (id === "new") return;
     let res = await fetch(`/api/notes/${id}`);
     let data = await res.json();
-    setNote(data);
+    setNote(JSON.parse(data));
   };
 
   let createNote = async () => {
