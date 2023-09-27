@@ -81,4 +81,4 @@ def createNote(request):
     data = request.data
     note = Notes.objects.create(body=data["body"])
     serializer = NoteSerializer(note, many=False)
-    return Response(serializer.data)
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
