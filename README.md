@@ -28,7 +28,6 @@
 ## 📖 Table of Contents
 - [📖 Table of Contents](#-table-of-contents)
 - [📍 Overview](#-overview)
-- [📦 Features](#-features)
 - [📂 Repository Structure](#-repository-structure)
 - [⚙️ Modules](#modules)
 - [🚀 Getting Started](#-getting-started)
@@ -48,25 +47,6 @@
 The project is a web application that allows users to create, update, and delete notes. It provides a Django backend for managing API endpoints and a React frontend for the user interface. The core functionalities include retrieving a list of notes, retrieving a specific note, creating a new note, updating an existing note, and deleting a note. The project's purpose is to provide a simple and intuitive way for users to manage their notes, enhancing their productivity and organization. Its value proposition lies in the seamless integration of the Django backend and React frontend, offering an efficient and user-friendly note-taking experience.
 
 ---
-
-## 📦 Features
-
-|    | Feature            | Description                                                                                                        |
-|----|--------------------|--------------------------------------------------------------------------------------------------------------------|
-| ⚙️ | **Architecture**   | The codebase follows a typical Django architecture, with separation between frontend and backend using Django for the backend and React for the frontend. It incorporates a RESTful API for managing notes. The architecture allows for easy scalability and maintenance.                                                                                                            |
-| 📄 | **Documentation**  | The codebase provides some documentation through comments in code files and a README file. However, the documentation could be more comprehensive, including an overview of the system, explanations of major components and their dependencies, and instructions on how to set up and run the project.                                                                          |
-| 🔗 | **Dependencies**   | The codebase relies on several external libraries, including Django, Django Rest Framework, react-router-dom, and many others. These libraries provide essential functionality and make development faster and more efficient. However, managing and updating multiple dependencies can become challenging over time.                                                                                                                               |
-| 🧩 | **Modularity**     | The project has well-organized directory structure, separating frontend and backend code. It follows the Django app structure and adheres to React's component-based architecture. The use of separate views, models, and serializers in the backend and separate components in the frontend promotes modularity and code reusability.                                                                                                         |
-| 🧪 | **Testing**        | The codebase includes a placeholder for tests in the `api/tests.py` file, but no actual tests are implemented. Testing is crucial for ensuring the correctness of the code, and implementing a comprehensive testing strategy, including unit tests and integration tests, would enhance the reliability and stability of the system.                                                                         |
-| ⚡️ | **Performance**    | It is difficult to determine the performance of the system without additional information. However, the codebase utilizes Django and React frameworks, which are known for their efficiency and performance optimizations. As long as proper coding practices and optimization techniques are followed, the system should perform well, providing a smooth user experience.                                                                                        |
-| 🔐 | **Security**       | The codebase incorporates several security measures, such as token-based authentication for the API, password validation settings in Django, and the use of Django's built-in security features. However, without a detailed security analysis, it is difficult to provide a comprehensive assessment. Nevertheless, the system seems to have basic security measures in place.                                                |
-| 🔀 | **Version Control**| The codebase utilizes Git for version control. Git allows multiple developers to collaborate efficiently, track changes, and revert to previous versions if needed. However, it's essential to ensure that proper branching and merging strategies are followed to avoid conflicts and maintain a clean commit history.                                                                                     |
-| 🔌 | **Integrations**   | The system seems to be self-contained, with no apparent external system integrations. However, the use of Django Rest Framework allows for easy integration with other systems or services, making it easier to expand the functionality of the app. Integration with databases, servers, or external APIs can be achieved using Django's capabilities and various Django packages.                                               |
-| 📶 | **Scalability**   
-
----
-
-
 ## 📂 Repository Structure
 
 ```sh
@@ -214,11 +194,10 @@ The project is a web application that allows users to create, update, and delete
 
 Please ensure you have the following dependencies installed on your system:
 
-`- ℹ️ Dependency 1`
+`npm install`
 
-`- ℹ️ Dependency 2`
+`pip -r requirements.txt`
 
-`- ℹ️ ...`
 
 ### 🔧 Installation
 
@@ -249,8 +228,8 @@ python manage.py runserver
 
 ## 🛣 Roadmap
 
-> - [X] `ℹ️  Task 1: Implement Authentication using JWT`
-> - [ ] `ℹ️  Task 2: Implement Authentication with google`
+> - [X] Task 1: Implement Authentication using JWT
+> - [ ] Task 2: Implement Authentication with google
 
 
 ---
